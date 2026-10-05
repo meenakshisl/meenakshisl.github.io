@@ -1,0 +1,105 @@
+[
+  {
+    "date": "2026-03-30",
+    "title": "Axios compromised: hijacked maintainer account pushes malicious npm versions",
+    "topic": "Supply chain security",
+    "url": "https://www.endorlabs.com/learn/npm-axios-compromise",
+    "publisher": "Endor Labs",
+    "description": "Co-written with Kiran Raj.",
+    "tags": [
+      "Supply chain security",
+      "Malware",
+      "npm"
+    ]
+  },
+  {
+    "date": "2026-01-09",
+    "title": "Host header validation bypass in Undertow",
+    "topic": "Vulnerability analysis",
+    "url": "https://www.endorlabs.com/learn/cve-2025-12543-host-header-validation-bypass-in-undertow",
+    "publisher": "Endor Labs",
+    "description": "An analysis of CVE-2025-12543.",
+    "tags": [
+      "Vulnerability analysis",
+      "HTTP",
+      "Java"
+    ]
+  },
+  {
+    "date": "2025-12-12",
+    "title": "When a broken fix leads to RCE: Argo Workflows",
+    "topic": "Vulnerability research",
+    "url": "https://www.endorlabs.com/learn/when-a-broken-fix-leads-to-rce-how-we-found-cve-2025-66626-in-argo",
+    "publisher": "Endor Labs",
+    "description": "Co-written with Cris Staicu.",
+    "tags": [
+      "Vulnerability research",
+      "RCE",
+      "Argo Workflows"
+    ]
+  },
+  {
+    "date": "2025-12-12",
+    "title": "When regex isn’t enough: remote code execution in pgAdmin",
+    "topic": "Vulnerability research",
+    "url": "https://www.endorlabs.com/learn/when-regex-isnt-enough-how-we-discovered-cve-2025-13780-in-pgadmin",
+    "publisher": "Endor Labs",
+    "description": "A write-up of CVE-2025-13780.",
+    "tags": [
+      "Vulnerability research",
+      "RCE",
+      "pgAdmin"
+    ]
+  },
+  {
+    "date": "2025-11-06",
+    "title": "Critical SQL injection vulnerability in Django",
+    "topic": "Vulnerability analysis",
+    "url": "https://www.endorlabs.com/learn/critical-sql-injection-vulnerability-in-django-cve-2025-64459",
+    "publisher": "Endor Labs",
+    "description": "An analysis of CVE-2025-64459.",
+    "tags": [
+      "Vulnerability analysis",
+      "SQL injection",
+      "Django"
+    ]
+  },
+  {
+    "date": "2025-06-09",
+    "title": "SQL injection in LlamaIndex",
+    "topic": "AI security",
+    "url": "https://www.endorlabs.com/learn/critical-sql-injection-vulnerability-in-llamaindex-cve-2025-1793---advisory-and-analysis",
+    "publisher": "Endor Labs",
+    "description": "How LLM-powered applications can expose vector stores to SQL injection.",
+    "tags": [
+      "AI security",
+      "SQL injection",
+      "LLMs"
+    ]
+  },
+  {
+    "date": "2025-05-20",
+    "title": "SAML single sign-on bypass in samlify",
+    "topic": "Vulnerability analysis",
+    "url": "https://www.endorlabs.com/learn/cve-2025-47949-reveals-flaw-in-samlify-that-opens-door-to-saml-single-sign-on-bypass",
+    "publisher": "Endor Labs",
+    "description": "An analysis of CVE-2025-47949.",
+    "tags": [
+      "Vulnerability analysis",
+      "Authentication",
+      "SAML"
+    ]
+  },
+  {
+    "date": "",
+    "title": "Digital forensics notes",
+    "topic": "Digital forensics",
+    "publisher": "Personal notes",
+    "url": "https://meenakshisl.github.io/digital-forensics-notes/",
+    "description": "Course notes from an earlier exploration of digital forensics, including acquisition, memory, mobile, and OS artifacts.",
+    "tags": [
+      "Digital forensics",
+      "Notes"
+    ]
+  }
+]
