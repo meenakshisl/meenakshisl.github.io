@@ -12,8 +12,8 @@ The completed homepage is also included, so you can inspect it before deployment
 
 ## Sync Hashnode articles
 
-The Publish portfolio workflow fetches all public posts from
-`meenakshisl.hashnode.dev`, merges them with the manual writing list by URL,
+The Publish portfolio workflow fetches posts from the public RSS feed at
+`https://meenakshisl.hashnode.dev/rss.xml`, merges them with the manual writing list by URL,
 and deploys the site. Manual entries take precedence. No API token or automated
 commits are needed. A failed fetch stops deployment and leaves the live site intact.
 
@@ -29,7 +29,7 @@ activity; re-enable the workflow in Actions when needed. Pushes also rebuild and
 sync the site, and manual runs always bypass the cadence check.
 
 For local preview with Hashnode posts, run `python3 scripts/fetch_hashnode.py`
-before `python3 build.py`. The downloaded `content/hashnode.json` is ignored by Git.
+before `python3 build.py`. The downloaded `content/hashnode.json` is ignored by Git. RSS may contain only recent posts; add any older articles you want to retain permanently to `content/writing.json`. RSS does not require Hashnode Pro or an API token.
 
 ## Add a Medium or other external article
 
