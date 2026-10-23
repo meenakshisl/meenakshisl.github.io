@@ -3,6 +3,9 @@ on:
   push:
     branches: [master, main]
   workflow_dispatch:
+  schedule:
+    # Weekly wake-up; the cadence job skips alternate weeks.
+    - cron: '17 3 * * 5'
 permissions:
   contents: read
   pages: write
@@ -11,13 +14,34 @@ concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
+  cadence:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.check.outputs.deploy }}
+    steps:
+      - id: check
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from datetime import datetime, date, timezone
+          days = (datetime.now(timezone.utc).date() - date(2026, 10, 30)).days
+          due = os.environ['EVENT_NAME'] != 'schedule' or days % 14 < 7
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              print(f'deploy={str(due).lower()}', file=output)
+          PY
   deploy:
+    needs: cadence
+    if: needs.cadence.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch Hashnode articles
+        run: python3 scripts/fetch_hashnode.py
       - name: Build writing list
         run: python3 build.py
       - uses: actions/configure-pages@v5

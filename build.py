@@ -6,6 +6,13 @@ from urllib.parse import urlparse
 import json, re
 ROOT=Path(__file__).resolve().parent
 posts=json.loads((ROOT/'content/writing.json').read_text())
+hashnode=ROOT/'content/hashnode.json'
+if hashnode.exists():
+    known_urls={post['url'].rstrip('/') for post in posts}
+    for post in json.loads(hashnode.read_text()):
+        if post['url'].rstrip('/') not in known_urls:
+            posts.append(post)
+            known_urls.add(post['url'].rstrip('/'))
 settings=json.loads((ROOT/'content/settings.json').read_text())
 rows=[]
 for post in sorted(posts,key=lambda p:p['date'],reverse=True):

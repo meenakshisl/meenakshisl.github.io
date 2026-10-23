@@ -10,6 +10,27 @@ Back up your existing repository before replacing its homepage. Copy this folder
 
 The completed homepage is also included, so you can inspect it before deployment.
 
+## Sync Hashnode articles
+
+The Publish portfolio workflow fetches all public posts from
+`meenakshisl.hashnode.dev`, merges them with the manual writing list by URL,
+and deploys the site. Manual entries take precedence. No API token or automated
+commits are needed. A failed fetch stops deployment and leaves the live site intact.
+
+To update immediately: open the repository on GitHub → **Actions → Publish
+portfolio → Run workflow**, select the default branch, and click **Run workflow**.
+The workflow must first be committed and pushed to the default branch.
+
+Automatic sync runs every other Friday at 08:47 India time (03:17 UTC), starting
+30 October 2026. GitHub cron cannot represent a 14-day interval, so a weekly
+cadence job skips alternate weeks. GitHub may delay scheduled runs and disables
+scheduled workflows in public repositories after 60 days without repository
+activity; re-enable the workflow in Actions when needed. Pushes also rebuild and
+sync the site, and manual runs always bypass the cadence check.
+
+For local preview with Hashnode posts, run `python3 scripts/fetch_hashnode.py`
+before `python3 build.py`. The downloaded `content/hashnode.json` is ignored by Git.
+
 ## Add a Medium or other external article
 
 Add an entry to `content/writing.json` (include a comma between entries):
