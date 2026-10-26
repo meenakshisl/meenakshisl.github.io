@@ -20,20 +20,20 @@ jobs:
       deploy: ${{ steps.check.outputs.deploy }}
     steps:
       - id: check
-        env:
-          EVENT_NAME: ${{ github.event_name }}
+        # Manual runs and pushes never wait for the fortnightly schedule.
+        if: github.event_name == 'schedule'
         run: |
           python3 - <<'PY'
           import os
           from datetime import datetime, date, timezone
           days = (datetime.now(timezone.utc).date() - date(2026, 10, 30)).days
-          due = os.environ['EVENT_NAME'] != 'schedule' or days % 14 < 7
+          due = days % 14 < 7
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               print(f'deploy={str(due).lower()}', file=output)
           PY
   deploy:
     needs: cadence
-    if: needs.cadence.outputs.deploy == 'true'
+    if: github.event_name != 'schedule' || needs.cadence.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
