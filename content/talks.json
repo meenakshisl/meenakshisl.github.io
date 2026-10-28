@@ -1,0 +1,81 @@
+[
+  {
+    "date": "2026-12-07",
+    "end_date": "2026-12-11",
+    "title": "Emerging Frontiers in AI-Driven Cybersecurity",
+    "event": "IIIT Kottayam",
+    "kind": "Workshop / Faculty Development Program",
+    "description": "Resource person for a five-day online, hands-on program on AI-assisted offensive security, agentic AI, and digital forensics.",
+    "upcoming": true,
+    "event_url": "assets/talks/iiit-kottayam-december-2026.jpeg",
+    "slides_url": "",
+    "image": "assets/talks/iiit-kottayam-december-2026.jpeg",
+    "image_alt": "IIIT Kottayam poster for Emerging Frontiers in AI-Driven Cybersecurity"
+  },
+  {
+    "date": "2026-04-19",
+    "title": "AI Security 101",
+    "event": "InCTF Conference",
+    "kind": "Talk",
+    "description": "An introduction to AI security.",
+    "event_url": "https://www.linkedin.com/posts/inctf2026-ai-aisecurity-share-7451243605513625600-2Y_d/",
+    "slides_url": "https://lnkd.in/p/dWPhxkJM",
+    "image": "assets/talks/inctf-2026.jpg",
+    "image_alt": "InCTF 2026 speaker poster featuring Meenakshi S L, 19 April 2026 at 4 PM"
+  },
+  {
+    "date": "2024-10-19",
+    "title": "Efficiency with Feasibility: Securing Your Supply Chain",
+    "event": "bi0s meetup",
+    "kind": "Talk",
+    "description": "",
+    "event_url": "https://www.linkedin.com/posts/bi0s-meetup_cybersecurity-bi0smeetup-microsoft-activity-7251559085949530115-wzgj",
+    "slides_url": "",
+    "image": "assets/talks/bi0s-2024.jpg",
+    "image_alt": "bi0s meetup poster for Efficiency with Feasibility: Securing Your Supply Chain"
+  },
+  {
+    "date": "2023-12-16",
+    "title": "Linux Privilege Escalation for Beginners",
+    "event": "bi0s meetup",
+    "kind": "Talk",
+    "description": "",
+    "event_url": "https://www.linkedin.com/posts/meenakshisl_linuxsecurity-techtalk-linuxtalk-activity-7140596960310231042-pbl0",
+    "slides_url": "https://docs.google.com/presentation/d/11C39TCVtA84FbYzI0Hqc7Tzmdv_zldhN7Wk7I3gn7kM/edit?slide=id.p#slide=id.p",
+    "image": "assets/talks/bi0s-2023.jpg",
+    "image_alt": "bi0s meetup poster for Linux Privilege Escalation for Beginners"
+  },
+  {
+    "date": "2021-01-22",
+    "title": "Intro to Codes and Ciphers",
+    "event": "Shakticon",
+    "kind": "Training",
+    "description": "",
+    "event_url": "https://x.com/teamshakti06/status/1348282800613453824",
+    "slides_url": "https://docs.google.com/presentation/d/12nvBMCQdyu-wxzNM8_NLCO8lxZveAoj7c47EYtV38pY/edit?usp=sharing",
+    "image": "assets/talks/shakticon-2021.jpg",
+    "image_alt": "Shakticon poster for Intro Codes and Ciphers"
+  },
+  {
+    "date": "2020-10-03",
+    "title": "CTFs, Codes and Ciphers",
+    "event": "Winja Talks × nullcon",
+    "kind": "Talk",
+    "description": "An introduction to the world of cryptography and capture-the-flag competitions.",
+    "event_url": "https://webfiles.amrita.edu/2022/11/Wiu25LFI-newsletter-school-of-engineering-amritapuri-2020.pdf",
+    "slides_url": "https://docs.google.com/presentation/d/1UDxIV3OEg-pCKSu-Xz5XDzlIU_OIyMro83SN4VziOZI/edit?usp=sharing",
+    "image": "assets/talks/winja-2020.png",
+    "image_alt": "Winja Talks × nullcon poster for CTFs, Codes and Ciphers"
+  },
+  {
+    "date": "2020-08-22",
+    "title": "Levelling up the Estrogen in the Cyber World",
+    "event": "The Diana Initiative",
+    "kind": "Talk",
+    "description": "Introducing CTFs and diversity in cybersecurity, co-presented with Sandhra Bino.",
+    "event_url": "https://x.com/DianaInitiative/status/1302479008278298624",
+    "slides_url": "",
+    "image": "assets/talks/diana-2020.png",
+    "image_alt": "The Diana Initiative poster for Levelling up the Estrogen in the Cyber World"
+  }
+]

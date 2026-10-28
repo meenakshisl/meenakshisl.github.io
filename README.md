@@ -73,3 +73,18 @@ Add your actual résumé PDF at `assets/resume.pdf`, then run `python3 build.py`
 ## Writing search and tags
 
 Writing supports a keyword search and a tag dropdown, usable together. Search covers titles, descriptions, topics, publishers, and tags; it does not search the full text on external publishers. All entered words must match. Add a `"tags": ["AI security", "LLMs"]` field to an article in `content/writing.json`; the dropdown updates during the build. Existing entries without tags fall back to their topic. Clear filters restores the complete list. With JavaScript disabled, the full article list remains available.
+
+## Add a talk, training, or workshop
+
+Edit `content/talks.json`, then run `python3 build.py`. Entries appear newest first
+on the Talks page. Use `date` as `YYYY` when only the year is known, or
+`YYYY-MM-DD` for a confirmed date. Include `title`, `event`, `kind`, and
+`description`; optionally include `event_url` and `slides_url` for event and slide links. For upcoming events, set `upcoming` to `true`, use a complete
+start date, and optionally add `end_date`. They move to Past sessions after the
+program ends. Poster assets live in `assets/talks/`.
+
+Each talk needs `image` (a local path inside `assets/talks/`) and `image_alt`.
+The image opens at full size when clicked. Use `event_url` and `slides_url` for
+consistent **Event** and **Slides** links; leave a URL empty to hide that link.
+No Recording link is displayed. All entries use original announcement posters (the
+Winja and Diana images were extracted from Amrita's 2020 newsletter).
