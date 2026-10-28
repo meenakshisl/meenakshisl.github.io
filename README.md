@@ -88,3 +88,16 @@ The image opens at full size when clicked. Use `event_url` and `slides_url` for
 consistent **Event** and **Slides** links; leave a URL empty to hide that link.
 No Recording link is displayed. All entries use original announcement posters (the
 Winja and Diana images were extracted from Amrita's 2020 newsletter).
+
+## Google Analytics 4
+
+`content/settings.json` contains the public `google_analytics_measurement_id`.
+The shared build adds the Google tag to all five pages. It only initializes on
+`meenakshisl.github.io`, so local previews do not record visits. Set the ID to an
+empty string to disable GA4, then rebuild and publish. Cloudflare remains disabled
+unless its separate token is configured.
+
+In GA4, enable Enhanced measurement on the Web stream for page views, scrolls,
+outbound clicks, and file-link clicks. After publishing, visit the live site and
+check Reports → Realtime. Regular reports can take 24–48 hours. This integration
+does not add custom click events or modify your GA4 account settings.

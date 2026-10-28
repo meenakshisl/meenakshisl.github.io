@@ -38,3 +38,21 @@ class StylesheetCacheTests(unittest.TestCase):
             self.assertEqual(first, build())
             css.write_text('body { color: green; }')
             self.assertNotEqual(first, build())
+            pages = list(root.glob('*.html'))
+            for page in pages:
+                html = page.read_text()
+                self.assertEqual(html.count("gtag('config', 'G-MGVBVXZXQN')"), 1)
+                self.assertIn("window.location.hostname !== 'meenakshisl.github.io'", html)
+            settings_path = root / 'content/settings.json'
+            settings = json.loads(settings_path.read_text())
+            settings['google_analytics_measurement_id'] = ''
+            settings_path.write_text(json.dumps(settings))
+            build()
+            for page in pages:
+                self.assertNotIn('googletagmanager.com', page.read_text())
+            settings['google_analytics_measurement_id'] = 'invalid</script>'
+            settings_path.write_text(json.dumps(settings))
+            result = subprocess.run([sys.executable, str(root / 'build.py')],
+                                    capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn('valid GA4 measurement ID', result.stderr)

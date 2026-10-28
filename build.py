@@ -35,6 +35,25 @@ if token:
     beacon=escape(json.dumps({'token':token}),quote=True)
     analytics=f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{beacon}"></script>'
 
+
+measurement_id=settings.get('google_analytics_measurement_id','').strip()
+if measurement_id and not re.fullmatch(r'G-[A-Z0-9]+',measurement_id):
+    raise ValueError('Enter a valid GA4 measurement ID, starting with G-')
+if measurement_id:
+    analytics+=f'''<script>
+(function () {{
+  if (window.location.hostname !== 'meenakshisl.github.io') return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {{ window.dataLayer.push(arguments); }};
+  gtag('js', new Date());
+  gtag('config', '{measurement_id}');
+  var tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id={measurement_id}';
+  document.head.appendChild(tag);
+}})();
+</script>'''
+
 NAV=[('index.html','Home'),('writing.html','Writing'),('projects.html','Projects'),('talks.html','Talks'),('resume.html','Résumé')]
 def section(title, body):
     return f'<section><h2>{title}</h2><div class="section-body">{body}</div></section>'
