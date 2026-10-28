@@ -3,8 +3,9 @@ from pathlib import Path
 from datetime import date
 from html import escape
 from urllib.parse import urlparse
-import json, re
+import hashlib, json, re
 ROOT=Path(__file__).resolve().parent
+style_version=hashlib.sha256((ROOT/'assets/style.css').read_bytes()).hexdigest()[:12]
 posts=json.loads((ROOT/'content/writing.json').read_text())
 hashnode=ROOT/'content/hashnode.json'
 if hashnode.exists():
@@ -92,6 +93,6 @@ for filename,label,body in [('index.html','Home',home),('writing.html','Writing'
     nav=''.join(f'<a href="{url}"'+(' aria-current="page"' if url==filename else '')+f'>{name}</a>' for url,name in NAV)
     title=escape('Meenakshi S L · '+('Independent Security Researcher' if label=='Home' else label))
     description="Meenakshi S L, independent security researcher focused on open-source vulnerability research, application security, and static analysis." if label=="Home" else "Meenakshi S L’s security portfolio, published writing, projects, and professional experience."
-    html=f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="{escape(description,quote=True)}"><meta name="theme-color" content="#f7f6f2"><meta property="og:title" content="{title}"><meta property="og:type" content="website"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css">{analytics}</head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="top"><a class="brand" href="index.html">Meenakshi / ph03n1x</a><nav aria-label="Main navigation">{nav}</nav></header><main id="main">{body}</main><footer><span>Meenakshi S L / ph03n1x</span><a href="https://www.linkedin.com/in/meenakshisl/">Get in touch ↗</a></footer></div></body></html>"""
+    html=f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="{escape(description,quote=True)}"><meta name="theme-color" content="#f7f6f2"><meta property="og:title" content="{title}"><meta property="og:type" content="website"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css?v={style_version}">{analytics}</head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="top"><a class="brand" href="index.html">Meenakshi / ph03n1x</a><nav aria-label="Main navigation">{nav}</nav></header><main id="main">{body}</main><footer><span>Meenakshi S L / ph03n1x</span><a href="https://www.linkedin.com/in/meenakshisl/">Get in touch ↗</a></footer></div></body></html>"""
     (ROOT/filename).write_text(html)
 print(f'Built five pages with {len(rows)} articles. Résumé: {"available" if resume.exists() else "awaiting PDF"}.')
