@@ -101,5 +101,70 @@
       "Digital forensics",
       "Notes"
     ]
+  },
+  {
+    "date": "2021-03-13",
+    "title": "SageMath : Installation",
+    "topic": "Open source",
+    "publisher": "Cyberdummy · WordPress",
+    "url": "https://cyberdummy.home.blog/2021/03/13/sagemath-a-gsoc-journey/",
+    "description": "Notes on installing SageMath from source on Ubuntu and getting started with open-source contributions.",
+    "tags": [
+      "SageMath",
+      "Open source",
+      "Linux"
+    ]
+  },
+  {
+    "date": "2020-02-04",
+    "title": "HackTM CTF 2020",
+    "topic": "Cryptography",
+    "publisher": "Cyberdummy · WordPress",
+    "url": "https://cyberdummy.home.blog/2020/02/04/hacktm-ctf-2020/",
+    "description": "Write-ups of three cryptography challenges from HackTM CTF 2020, played with Team Shakti.",
+    "tags": [
+      "CTF",
+      "Cryptography",
+      "RSA"
+    ]
+  },
+  {
+    "date": "2019-08-12",
+    "title": "de1ctf-2019",
+    "topic": "Cryptography",
+    "publisher": "Cyberdummy · WordPress",
+    "url": "https://cyberdummy.home.blog/2019/08/12/de1ctf-2019/",
+    "description": "A write-up of the BabyRSA challenge from de1ctf 2019.",
+    "tags": [
+      "CTF",
+      "Cryptography",
+      "RSA"
+    ]
+  },
+  {
+    "date": "2019-07-02",
+    "title": "ISITDTUCTF 2019- Matrix(Programming)",
+    "topic": "CTF write-ups",
+    "publisher": "Cyberdummy · WordPress",
+    "url": "https://cyberdummy.home.blog/2019/07/02/isitdtuctf-2019-matrixprogramming/",
+    "description": "Reversing matrix and string transformations in the ISITDTUCTF 2019 Matrix programming challenge.",
+    "tags": [
+      "CTF",
+      "Programming",
+      "Algorithms"
+    ]
+  },
+  {
+    "date": "2019-01-03",
+    "title": "Defusing the Binary Bombs!",
+    "topic": "Reverse engineering",
+    "publisher": "Cyberdummy · WordPress",
+    "url": "https://cyberdummy.home.blog/2019/01/03/the-journey-begins/",
+    "description": "A walkthrough of the six phases of the CMU Binary Bomb Lab using disassembly and debugging.",
+    "tags": [
+      "Reverse engineering",
+      "Assembly",
+      "Binary analysis"
+    ]
   }
 ]
